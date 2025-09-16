@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Content Dashboard (Demo)
 
-## Getting Started
+A demo project showcasing modern **frontend development with Next.js, TypeScript, TailwindCSS, and Material UI (MUI)**.  
+It simulates a dashboard for managing AI-generated articles, highlighting **design system customization, API integration, performance optimization, and state management with Redux Toolkit**.  
 
-First, run the development server:
+This project was built as a demonstration of my skills for roles at the intersection of **AI, technology, and SEO**.  
 
+---
+
+## 🚀 Features
+- ⚛️ **Next.js + TypeScript** for scalable, production-ready frontend apps  
+- 🎨 **TailwindCSS + MUI** unified into a cohesive design system  
+- 🔄 **Redux Toolkit** for predictable state management  
+- 🌐 **Mock API (Next.js API Routes)** serving dynamic article data  
+- 📱 **Responsive & Accessible** UI following best practices  
+- ⚡ **Performance-first design** with SEO-friendly architecture  
+
+---
+
+## 📸 Screenshots  
+*(optional: once you run it locally, take 1–2 screenshots and add them here)*  
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js 20+  
+- npm 10+  
+
+### Installation
 ```bash
+# Clone the repo
+git clone https://github.com/your-username/ai-content-dashboard.git
+cd ai-content-dashboard
+
+# Install dependencies
+npm install
+# Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Open in browser
+http://localhost:3000
+# Project Structure
+ai-content-dashboard/
+│── pages/
+│   ├── index.tsx         # Login page
+│   ├── dashboard.tsx     # Dashboard with articles
+│   └── api/
+│       └── articles.ts   # Mock API
+│
+│── components/
+│   ├── Layout.tsx
+│   ├── ArticleTable.tsx
+│   └── Navbar.tsx
+│
+│── store/
+│   └── articlesSlice.ts
+│   └── store.ts
+│
+│── styles/
+│   └── globals.css
+│
+│── README.md
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🌟 What This Demonstrates
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Translating Figma designs to functional UIs
 
-## Learn More
+Creating a design system with Tailwind & MUI
 
-To learn more about Next.js, take a look at the following resources:
+Integrating APIs into React state management
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Applying SEO-friendly optimizations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Delivering responsive, accessible frontends
 
-## Deploy on Vercel
+🔗 Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Live Demo: Deployed on Vercel
+ (link here once deployed)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GitHub Repo: ai-content-dashboard
