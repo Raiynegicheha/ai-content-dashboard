@@ -36,29 +36,33 @@ interface Article {
   status: string;
 }
 
-export default function ArticleTable({ articles }: { articles: Article[] }) {
-  const [editingArticle, setEditingArticle] = React.useState<Article | null>(
-    null
-  );
-  console.log("EditArticles:", editingArticle);
-  const [open, setOpen] = React.useState(false);
+export default function ArticleTable({
+  articles,
+  setEditArticle,
+  handleOpen,
+}: {
+  articles: Article[];
+  setEditArticle: (article: Article) => void;
+  handleOpen: () => void;
+}) {
+  // const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formJson = Object.fromEntries((formData as any).entries());
-    const title = formJson.title;
-    const status = formJson.status;
-    console.log({ title, status });
-    if (editingArticle) {
-      const updatedArticle = { ...editingArticle, title, status };
-      dispatch(updateArticle(updatedArticle));
-    }
-    handleClose();
-  };
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const formData = new FormData(event.currentTarget);
+  //   const formJson = Object.fromEntries((formData as any).entries());
+  //   const title = formJson.title;
+  //   const status = formJson.status;
+  //   console.log({ title, status });
+  //   if (editingArticle) {
+  //     const updatedArticle = { ...editingArticle, title, status };
+  //     dispatch(updateArticle(updatedArticle));
+  //   }
+  //   handleClose();
+  // };
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
   return (
     <Paper>
       <Table>
@@ -79,7 +83,7 @@ export default function ArticleTable({ articles }: { articles: Article[] }) {
               <TableCell>
                 <Button
                   onClick={() => {
-                    setEditingArticle(a);
+                    setEditArticle(a);
                     // setOpen(true);
                     handleOpen();
                   }}
@@ -115,11 +119,11 @@ export default function ArticleTable({ articles }: { articles: Article[] }) {
           ))}
         </TableBody>
       </Table>
-      <Dialog open={open} onClose={handleClose}>
+      {/* <Dialog open={open} onClose={handleClose}>
         <DialogTitle>
           {editingArticle
             ? `Update Article: ${editingArticle.title}`
-            : "No Article Selected"}{" "}
+            : "Add article"}{" "}
         </DialogTitle>
         <DialogContent>
           <form onSubmit={handleSubmit} id="subscription-form">
@@ -132,14 +136,17 @@ export default function ArticleTable({ articles }: { articles: Article[] }) {
               variant="outlined"
               fullWidth
               margin="normal"
+              defaultValue={editingArticle?.title || ""}
             />
             <TextField
               id="status"
               label="Status"
               name="status"
+              hiddenLabel
               variant="outlined"
               fullWidth
               margin="normal"
+              defaultValue={editingArticle?.status || ""}
             />
           </form>
         </DialogContent>
@@ -149,7 +156,7 @@ export default function ArticleTable({ articles }: { articles: Article[] }) {
             Update
           </Button>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </Paper>
   );
 }
