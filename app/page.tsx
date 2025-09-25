@@ -18,6 +18,7 @@ export default function Login() {
           <Typography
             variant="h4"
             sx={{ fontWeight: "bold", textAlign: "center" }}
+            color="textSecondary"
             gutterBottom
             className="text-center"
           >

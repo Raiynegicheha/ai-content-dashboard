@@ -55,12 +55,12 @@ export default function Dashboard() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Articles</h1>
+    <div className="p-8 bg-gray-100 min-h-screen text-black">
+      <h1 className="text-2xl font-bold mb-4">ARTICLES</h1>
       <Button
         variant="contained"
         color="primary"
-        className="mb-4"
+        className="mb-8"
         onClick={() => {
           setEditingArticle(null);
           handleOpen();
